@@ -1,4 +1,4 @@
-name: Build and Publish Website
+name: Publish Website
 
 on:
   workflow_dispatch:
@@ -11,8 +11,8 @@ jobs:
         with:
           ref: main
       - uses: actions-rust-lang/setup-rust-toolchain@v1
-      - uses: cargo-bins/cargo-binstall@main
-      - run: cargo binstall trunk
+      #- uses: cargo-bins/cargo-binstall@main
+      #- run: cargo binstall trunk
       - run: trunk build --release
       - uses: actions/upload-pages-artifact@v3
         with:
