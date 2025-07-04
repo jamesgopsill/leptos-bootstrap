@@ -1,0 +1,34 @@
+name: Build and Publish Website
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions-rust-lang/setup-rust-toolchain@v1
+      - uses: cargo-bins/cargo-binstall@main
+      - run: cargo binstall trunk
+      - run: cd app
+      - run: trunk build --release
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: app/dist/
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    permissions:
+      pages: write # to deploy to Pages
+      id-token: write # to verify the deployment originates from an appropriate source
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

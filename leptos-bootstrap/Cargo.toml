@@ -1,0 +1,10 @@
+[package]
+name = "leptos-bootstrap"
+version = "0.1.0"
+edition = "2024"
+
+[lib]
+
+[dependencies]
+leptos = { version = "0.8.2", features = ["csr"] }
+uuid = { version = "1.17.0", features = ["v4", "js"] }

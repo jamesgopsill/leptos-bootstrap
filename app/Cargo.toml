@@ -1,0 +1,10 @@
+[package]
+name = "app"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+leptos = { version = "0.8.2", features = ["csr"] }
+console_error_panic_hook = { version = "0.1.7" }
+leptos_router = { version = "0.8.2" }
+leptos-bootstrap = { path = "../leptos-bootstrap" }
