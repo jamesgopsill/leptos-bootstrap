@@ -16,34 +16,34 @@ pub fn App() -> impl IntoView {
         <Router>
             <NavBar class="navbar-expand-lg bg-body-tertiary">
                 <ContainerFluid>
-                    <NavBarBrand href="/">Leptos Bootstrap</NavBarBrand>
+                    <NavBarBrand href="/leptos-bootstrap/">Leptos Bootstrap</NavBarBrand>
                     <NavBarMenu>
                         <NavBarNav>
                             <NavBarText class="me-2">{"Version: 5"}</NavBarText>
                             <NavBarDropDown label="Components">
-                                <NavBarDropDownItem href="/v5/accordion">
+                                <NavBarDropDownItem href="/leptos-bootstrap/v5/accordion">
                                     Accordion
                                 </NavBarDropDownItem>
-                                <NavBarDropDownItem href="/v5/button">
+                                <NavBarDropDownItem href="/leptos-bootstrap/v5/button">
                                     Button
                                 </NavBarDropDownItem>
-                                <NavBarDropDownItem href="/v5/input">
+                                <NavBarDropDownItem href="/leptos-bootstrap/v5/input">
                                     Input
                                 </NavBarDropDownItem>
                             </NavBarDropDown>
                         </NavBarNav>
                         <NavBarNav class="ms-auto">
-                            <NavLink href="#" class="ms-auto"><Icon kind=IconKind::Github /></NavLink>
+                            <NavLink href="https://github.com/jamesgopsill/leptos-bootstrap" class="ms-auto"><Icon kind=IconKind::Github /></NavLink>
                         </NavBarNav>
                     </NavBarMenu>
                 </ContainerFluid>
             </NavBar>
             <ContainerFluid>
                 <Routes fallback=NotFoundPage>
-                    <Route path=path!("/") view=IndexPage />
-                    <Route path=path!("/v5/accordion") view=AccordionPage />
-                    <Route path=path!("/v5/button") view=ButtonPage />
-                    <Route path=path!("/v5/input") view=InputPage />
+                    <Route path=path!("/leptos-bootstrap/") view=IndexPage />
+                    <Route path=path!("/leptos-bootstrap/v5/accordion") view=AccordionPage />
+                    <Route path=path!("/leptos-bootstrap/v5/button") view=ButtonPage />
+                    <Route path=path!("/leptos-bootstrap/v5/input") view=InputPage />
                 </Routes>
             </ContainerFluid>
             <footer class="mt-5 mb-5">
