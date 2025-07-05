@@ -1,10 +1,20 @@
 # leptos-bootstrap
 
-This library provides bootstrap styled components for your leptos webapps.
+This library provides bootstrap styled components for your leptos webapps. Demos of the components can be found [here](https://jamesgopsill.github.io/leptos-bootstrap/).
 
-## Usage
+# Support
 
-To use, please add the following to the bootstrap css to your index html. E.g.,
+Please consider supporting the crate by:
+
+- Downloading and using the crate.
+- Raising issues, feature requests and improvements.
+- Recommending the crate to others.
+- ⭐ the crate on GitHub.
+- Sponsoring the [maintainer](https://github.com/sponsors/jamesgopsill).
+
+# Usage
+
+To use, please add the bootstrap css, js and icon set cdn links to your index html. E.g.,
 
 ```html
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
