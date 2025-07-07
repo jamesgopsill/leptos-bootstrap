@@ -19,6 +19,7 @@ pub enum ButtonKind {
     OutlineInfo,
     OutlineLight,
     OutlineDark,
+    Close,
 }
 
 impl fmt::Display for ButtonKind {
@@ -41,6 +42,7 @@ impl fmt::Display for ButtonKind {
             Self::OutlineInfo => "btn-outline-info",
             Self::OutlineLight => "btn-outline-light",
             Self::OutlineDark => "btn-outline-dark",
+            Self::Close => "btn-close",
         };
         write!(f, "{}", s)
     }
@@ -68,13 +70,31 @@ pub fn Button<'a>(
     #[prop(default = ButtonKind::Primary)] kind: ButtonKind,
     #[prop(default = ButtonSize::Normal)] size: ButtonSize,
     #[prop(default = false)] disabled: bool,
-    #[prop(optional)] class: &'a str,
+    #[prop(default = false)] active: bool,
+    #[prop(optional, into)] class: &'a str,
     children: Children,
 ) -> impl IntoView {
-    let class = format!("btn {} {} {}", kind, size, class);
+    let mut class = format!("btn {} {} {}", kind, size, class.trim());
+    if active {
+        class.push_str(" active");
+    }
     view! {
         <button type="button" class=class disabled=disabled>
             {children()}
         </button>
+    }
+}
+
+#[component]
+pub fn ButtonGroup<'a>(
+    #[prop(default = ButtonSize::Normal)] size: ButtonSize,
+    #[prop(optional, into)] class: &'a str,
+    children: Children,
+) -> impl IntoView {
+    let class = format!("btn-group {} {}", size, class.trim());
+    view! {
+        <div class=class role="group">
+            {children()}
+        </div>
     }
 }

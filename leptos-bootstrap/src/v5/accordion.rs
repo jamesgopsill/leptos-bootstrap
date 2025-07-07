@@ -2,7 +2,7 @@ use leptos::prelude::*;
 use uuid::Uuid;
 
 #[component]
-pub fn Accordion<'a>(#[prop(optional)] class: &'a str, children: Children) -> impl IntoView {
+pub fn Accordion<'a>(#[prop(optional, into)] class: &'a str, children: Children) -> impl IntoView {
     let class = format!("accordion {}", class);
     view! {
         <div class=class>

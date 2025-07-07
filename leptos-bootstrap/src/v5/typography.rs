@@ -1,9 +1,10 @@
 use leptos::prelude::*;
+use std::fmt;
 
 #[component]
 pub fn Display<'a>(
     size: &'a u8,
-    #[prop(optional)] class: &'a str,
+    #[prop(optional, into)] class: &'a str,
     children: Children,
 ) -> impl IntoView {
     let class = format!("display-{} {}", size, class);
@@ -15,7 +16,7 @@ pub fn Display<'a>(
 }
 
 #[component]
-pub fn Lead<'a>(#[prop(optional)] class: &'a str, children: Children) -> impl IntoView {
+pub fn Lead<'a>(#[prop(optional, into)] class: &'a str, children: Children) -> impl IntoView {
     let class = format!("lead {}", class);
     view! {
         <p class=class>
@@ -27,7 +28,7 @@ pub fn Lead<'a>(#[prop(optional)] class: &'a str, children: Children) -> impl In
 #[component]
 pub fn BlockQuote<'a>(
     #[prop(optional, into)] source: String,
-    #[prop(optional)] class: &'a str,
+    #[prop(optional, into)] class: &'a str,
     children: Children,
 ) -> impl IntoView {
     let class = format!("blockquote {}", class);
@@ -41,5 +42,33 @@ pub fn BlockQuote<'a>(
                 </figcaption>
             </Show>
         </blockquote>
+    }
+}
+
+pub enum ImageKind {
+    Fluid,
+    Thumbnail,
+}
+
+impl fmt::Display for ImageKind {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        let s = match self {
+            Self::Fluid => "img-fluid",
+            Self::Thumbnail => "img-thumbnail",
+        };
+        write!(f, "{}", s)
+    }
+}
+
+#[component]
+pub fn Image<'a>(
+    #[prop(default = ImageKind::Fluid)] kind: ImageKind,
+    #[prop(optional, into)] src: &'a str,
+    #[prop(optional, into)] alt: &'a str,
+    #[prop(optional, into)] class: &'a str,
+) -> impl IntoView {
+    let class = format!("{} {}", kind, class);
+    view! {
+        <img src=src class=class alt=alt />
     }
 }

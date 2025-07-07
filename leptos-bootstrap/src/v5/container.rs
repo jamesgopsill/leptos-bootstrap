@@ -1,7 +1,7 @@
 use leptos::prelude::*;
 
 #[component]
-pub fn Container<'a>(#[prop(optional)] class: &'a str, children: Children) -> impl IntoView {
+pub fn Container<'a>(#[prop(optional, into)] class: &'a str, children: Children) -> impl IntoView {
     let class = format!("container {}", class);
     view! {
         <div class=class>
@@ -11,7 +11,10 @@ pub fn Container<'a>(#[prop(optional)] class: &'a str, children: Children) -> im
 }
 
 #[component]
-pub fn ContainerFluid<'a>(#[prop(optional)] class: &'a str, children: Children) -> impl IntoView {
+pub fn ContainerFluid<'a>(
+    #[prop(optional, into)] class: &'a str,
+    children: Children,
+) -> impl IntoView {
     let class = format!("container-fluid {}", class);
     view! {
         <div class=class>

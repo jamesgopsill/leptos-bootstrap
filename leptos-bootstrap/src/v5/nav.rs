@@ -2,10 +2,10 @@ use leptos::prelude::*;
 
 #[component]
 pub fn NavLink<'a>(
-    href: &'a str,
+    #[prop(into)] href: &'a str,
     #[prop(optional)] active: bool,
     #[prop(optional)] disabled: bool,
-    #[prop(optional)] class: &'a str,
+    #[prop(optional, into)] class: &'a str,
     children: Children,
 ) -> impl IntoView {
     let mut className = "nav-link".to_string();
@@ -26,7 +26,7 @@ pub fn NavLink<'a>(
 }
 
 #[component]
-pub fn NavBar<'a>(#[prop(optional)] class: &'a str, children: Children) -> impl IntoView {
+pub fn NavBar<'a>(#[prop(optional, into)] class: &'a str, children: Children) -> impl IntoView {
     let class = format!("navbar {}", class);
     view! {
         <nav class=class>
@@ -37,8 +37,8 @@ pub fn NavBar<'a>(#[prop(optional)] class: &'a str, children: Children) -> impl 
 
 #[component]
 pub fn NavBarBrand<'a>(
-    href: &'a str,
-    #[prop(optional)] class: &'a str,
+    #[prop(into)] href: &'a str,
+    #[prop(optional, into)] class: &'a str,
     children: Children,
 ) -> impl IntoView {
     let class = format!("navbar-brand {}", class);
@@ -79,7 +79,7 @@ pub fn NavItem(children: Children) -> impl IntoView {
 }
 
 #[component]
-pub fn NavBarNav<'a>(#[prop(optional)] class: &'a str, children: Children) -> impl IntoView {
+pub fn NavBarNav<'a>(#[prop(optional, into)] class: &'a str, children: Children) -> impl IntoView {
     let class = format!("navbar-nav {}", class);
     view! {
         <ul class=class>
@@ -90,8 +90,8 @@ pub fn NavBarNav<'a>(#[prop(optional)] class: &'a str, children: Children) -> im
 
 #[component]
 pub fn NavBarDropDown<'a>(
-    label: &'a str,
-    #[prop(optional)] class: &'a str,
+    #[prop(into)] label: &'a str,
+    #[prop(optional, into)] class: &'a str,
     children: Children,
 ) -> impl IntoView {
     let class = format!("navbar-item dropdown {}", class);
@@ -110,7 +110,7 @@ pub fn NavBarDropDown<'a>(
 #[component]
 pub fn NavBarDropDownItem<'a>(
     #[prop(optional)] href: &'a str,
-    #[prop(optional)] class: &'a str,
+    #[prop(optional, into)] class: &'a str,
     children: Children,
 ) -> impl IntoView {
     let class = format!("dropdown-item {}", class);

@@ -33,7 +33,7 @@ impl fmt::Display for AlertKind {
 #[component]
 pub fn Alert<'a>(
     #[prop(default = AlertKind::Primary)] kind: AlertKind,
-    #[prop(optional)] class: &'a str,
+    #[prop(optional, into)] class: &'a str,
     children: Children,
 ) -> impl IntoView {
     let class = format!("alert {} {}", kind, class);
@@ -45,7 +45,10 @@ pub fn Alert<'a>(
 }
 
 #[component]
-pub fn AlertHeader<'a>(#[prop(optional)] class: &'a str, children: Children) -> impl IntoView {
+pub fn AlertHeader<'a>(
+    #[prop(optional, into)] class: &'a str,
+    children: Children,
+) -> impl IntoView {
     let class = format!("alert-heading {}", class);
     view! {
         <h4 class=class>

@@ -45,7 +45,7 @@ impl fmt::Display for IconKind {
 }
 
 #[component]
-pub fn Icon<'a>(kind: IconKind, #[prop(optional)] class: &'a str) -> impl IntoView {
+pub fn Icon<'a>(kind: IconKind, #[prop(optional, into)] class: &'a str) -> impl IntoView {
     let class = format!("bi {} {}", kind, class);
     view! {
         <i class=class></i>

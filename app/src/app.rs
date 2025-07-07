@@ -6,9 +6,7 @@ use leptos_bootstrap::v5::{
 use leptos_router::components::*;
 use leptos_router::path;
 
-use crate::v5::AccordionPage;
-use crate::v5::InputPage;
-use crate::v5::{ButtonPage, IndexPage, NotFoundPage};
+use crate::v5::*;
 
 #[component]
 pub fn App() -> impl IntoView {
@@ -23,6 +21,15 @@ pub fn App() -> impl IntoView {
                             <NavBarDropDown label="Components">
                                 <NavBarDropDownItem href="/leptos-bootstrap/v5/accordion">
                                     Accordion
+                                </NavBarDropDownItem>
+                                <NavBarDropDownItem href="/leptos-bootstrap/v5/alert">
+                                    Alert
+                                </NavBarDropDownItem>
+                                <NavBarDropDownItem href="/leptos-bootstrap/v5/badge">
+                                    Badge
+                                </NavBarDropDownItem>
+                                <NavBarDropDownItem href="/leptos-bootstrap/v5/breadcrumb">
+                                    Breadcrumb
                                 </NavBarDropDownItem>
                                 <NavBarDropDownItem href="/leptos-bootstrap/v5/button">
                                     Button
@@ -42,6 +49,9 @@ pub fn App() -> impl IntoView {
                 <Routes fallback=NotFoundPage>
                     <Route path=path!("/leptos-bootstrap/") view=IndexPage />
                     <Route path=path!("/leptos-bootstrap/v5/accordion") view=AccordionPage />
+                    <Route path=path!("/leptos-bootstrap/v5/alert") view=AlertPage />
+                    <Route path=path!("/leptos-bootstrap/v5/badge") view=BadgePage />
+                    <Route path=path!("/leptos-bootstrap/v5/breadcrumb") view=BreadcrumbPage />
                     <Route path=path!("/leptos-bootstrap/v5/button") view=ButtonPage />
                     <Route path=path!("/leptos-bootstrap/v5/input") view=InputPage />
                 </Routes>
