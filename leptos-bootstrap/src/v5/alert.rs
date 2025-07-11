@@ -50,9 +50,5 @@ pub fn AlertHeader<'a>(
     children: Children,
 ) -> impl IntoView {
     let class = format!("alert-heading {}", class);
-    view! {
-        <h4 class=class>
-            {children()}
-        </h4>
-    }
+    view! { <h4 class=class>{children()}</h4> }
 }

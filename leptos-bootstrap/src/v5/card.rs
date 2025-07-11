@@ -3,31 +3,19 @@ use leptos::prelude::*;
 #[component]
 pub fn Card<'a>(#[prop(optional, into)] class: &'a str, children: Children) -> impl IntoView {
     let class = format!("card {}", class);
-    view! {
-        <div class=class>
-            {children()}
-        </div>
-    }
+    view! { <div class=class>{children()}</div> }
 }
 
 #[component]
 pub fn CardBody<'a>(#[prop(optional, into)] class: &'a str, children: Children) -> impl IntoView {
     let class = format!("card-body {}", class);
-    view! {
-        <div class=class>
-            {children()}
-        </div>
-    }
+    view! { <div class=class>{children()}</div> }
 }
 
 #[component]
 pub fn CardTitle<'a>(#[prop(optional, into)] class: &'a str, children: Children) -> impl IntoView {
     let class = format!("card-title {}", class);
-    view! {
-        <div class=class>
-            {children()}
-        </div>
-    }
+    view! { <div class=class>{children()}</div> }
 }
 
 #[component]
@@ -36,21 +24,13 @@ pub fn CardSubTitle<'a>(
     children: Children,
 ) -> impl IntoView {
     let class = format!("card-sub-title {}", class);
-    view! {
-        <div class=class>
-            {children()}
-        </div>
-    }
+    view! { <div class=class>{children()}</div> }
 }
 
 #[component]
 pub fn CardText<'a>(#[prop(optional, into)] class: &'a str, children: Children) -> impl IntoView {
     let class = format!("card-text {}", class);
-    view! {
-        <p class=class>
-            {children()}
-        </p>
-    }
+    view! { <p class=class>{children()}</p> }
 }
 
 #[component]
@@ -70,9 +50,5 @@ pub fn CardLink<'a>(
 #[component]
 pub fn CardHeader<'a>(#[prop(optional, into)] class: &'a str, children: Children) -> impl IntoView {
     let class = format!("card-header {}", class);
-    view! {
-        <div class=class>
-            {children()}
-        </div>
-    }
+    view! { <div class=class>{children()}</div> }
 }

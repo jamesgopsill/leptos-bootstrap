@@ -5,9 +5,7 @@ pub fn Breadcrumb<'a>(#[prop(optional, into)] class: &'a str, children: Children
     let class = format!("breadcrumb {}", class);
     view! {
         <nav aria-label="breadcrumb">
-            <ol class=class>
-                {children()}
-            </ol>
+            <ol class=class>{children()}</ol>
         </nav>
     }
 }
@@ -22,9 +20,5 @@ pub fn BreadcrumbItem<'a>(
     if active {
         class.push_str(" active");
     }
-    view! {
-        <li class=class>
-            {children()}
-        </li>
-    }
+    view! { <li class=class>{children()}</li> }
 }

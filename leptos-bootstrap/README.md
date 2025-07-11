@@ -62,3 +62,13 @@ Your `index.html` should then look something like this:
     <body></body>
 </html>
 ```
+
+# Acknowledgements
+
+- GeminiAI for doing the heavy lifting on creating the Icon enum.
+
+# Useful Links
+
+- [Leptos](https://www.leptos.dev/)
+- [Trunk](https://trunkrs.dev/)
+- [Rust Webassembly](https://www.rust-lang.org/what/wasm)

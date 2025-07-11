@@ -9,8 +9,7 @@ pub fn Figure<'a>(
     let class = format!("figcaption {}", class.trim());
     view! {
         <figure class=class>
-            {children()}
-            <figcaption class="figure-caption">{caption}</figcaption>
+            {children()} <figcaption class="figure-caption">{caption}</figcaption>
         </figure>
     }
 }

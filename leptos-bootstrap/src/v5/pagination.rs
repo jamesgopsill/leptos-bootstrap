@@ -45,9 +45,7 @@ pub fn Pagination<'a>(
     let class = format!("pagination {} {} {}", align, size, class);
     view! {
         <nav>
-            <ul class=class>
-                {children()}
-            </ul>
+            <ul class=class>{children()}</ul>
         </nav>
     }
 }
@@ -68,7 +66,9 @@ pub fn PageItem<'a>(
     }
     view! {
         <li class=class>
-            <a href=href class="page-link">{children()}</a>
+            <a href=href class="page-link">
+                {children()}
+            </a>
         </li>
     }
 }

@@ -2,6 +2,48 @@ use leptos::prelude::*;
 
 use leptos_bootstrap::v5::{Card, CardBody, CardHeader, FloatingLabel, Input, InputKind};
 
+const EXAMPLE_ONE: &str = "use leptos_bootstrap::v5::{Input};
+
+#[component]
+pub fn Component() -> impl IntoView {
+    let text = RwSignal::new(String::new());
+    view! {
+        <Input value=text placeholder=\"Text\" />
+    }
+}";
+
+const EXAMPLE_TWO: &str = "use leptos_bootstrap::v5::{Input, InputKind};
+
+#[component]
+pub fn Component() -> impl IntoView {
+    let email = RwSignal::new(String::new());
+    view! {
+        <Input kind=InputKind::Email value=email placeholder=\"Email\" />
+    }
+}";
+
+const EXAMPLE_THREE: &str = "use leptos_bootstrap::v5::{Input};
+
+#[component]
+pub fn Component() -> impl IntoView {
+    let datetime_local = RwSignal::new(String::new());
+    view! {
+        <Input kind=InputKind::DateTimeLocal />
+    }
+}";
+
+const EXAMPLE_FOUR: &str = "use leptos_bootstrap::v5::{TextInput};
+
+#[component]
+pub fn Component() -> impl IntoView {
+    let val = RwSignal::new(String::new());
+    view! {
+        <FloatingLabel label=\"Email\">
+            <EmailInput value=val />
+        </FloatingLabel>
+    }
+}";
+
 #[component]
 pub fn InputPage() -> impl IntoView {
     let text = RwSignal::new(String::new());
@@ -10,24 +52,14 @@ pub fn InputPage() -> impl IntoView {
     let floating = RwSignal::new(String::new());
 
     view! {
-        <h1>Inputs</h1>
+        <h1 class="mt-3 mb-3">Inputs</h1>
         <Card>
             <CardHeader>Text</CardHeader>
             <CardBody>
                 <Input value=text placeholder="Text" />
                 <Card class="mt-2">
                     <CardBody>
-                        <pre>
-"use leptos_bootstrap::v5::{Input};
-
-#[component]
-pub fn Component() -> impl IntoView {
-    let text = RwSignal::new(String::new());
-    view! {
-        <Input value=text placeholder=\"Text\" />
-    }
-}"
-                        </pre>
+                        <pre>{EXAMPLE_ONE}</pre>
                     </CardBody>
                 </Card>
             </CardBody>
@@ -38,17 +70,7 @@ pub fn Component() -> impl IntoView {
                 <Input kind=InputKind::Email value=email placeholder="Email" />
                 <Card class="mt-2">
                     <CardBody>
-                        <pre>
-"use leptos_bootstrap::v5::{Input, InputKind};
-
-#[component]
-pub fn Component() -> impl IntoView {
-    let email = RwSignal::new(String::new());
-    view! {
-        <Input kind=InputKind::Email value=email placeholder=\"Email\" />
-    }
-}"
-                        </pre>
+                        <pre>{EXAMPLE_TWO}</pre>
                     </CardBody>
                 </Card>
             </CardBody>
@@ -59,17 +81,7 @@ pub fn Component() -> impl IntoView {
                 <Input kind=InputKind::DateTimeLocal value=datetime_local />
                 <Card class="mt-2">
                     <CardBody>
-                        <pre>
-"use leptos_bootstrap::v5::{Input};
-
-#[component]
-pub fn Component() -> impl IntoView {
-    let datetime_local = RwSignal::new(String::new());
-    view! {
-        <Input kind=InputKind::DateTimeLocal />
-    }
-}"
-                        </pre>
+                        <pre>{EXAMPLE_THREE}</pre>
                     </CardBody>
                 </Card>
             </CardBody>
@@ -82,19 +94,7 @@ pub fn Component() -> impl IntoView {
                 </FloatingLabel>
                 <Card class="mt-2">
                     <CardBody>
-                        <pre>
-"use leptos_bootstrap::v5::{TextInput};
-
-#[component]
-pub fn Component() -> impl IntoView {
-    let val = RwSignal::new(String::new());
-    view! {
-        <FloatingLabel label=\"Email\">
-            <EmailInput value=val />
-        </FloatingLabel>
-    }
-}"
-                        </pre>
+                        <pre>{EXAMPLE_FOUR}</pre>
                     </CardBody>
                 </Card>
             </CardBody>

@@ -83,29 +83,17 @@ pub fn Table<'a>(
     if sm {
         class.push_str(" table-sm");
     }
-    view! {
-        <table class=class>
-            {children()}
-        </table>
-    }
+    view! { <table class=class>{children()}</table> }
 }
 
 #[component]
 pub fn TableHead<'a>(#[prop(optional, into)] class: &'a str, children: Children) -> impl IntoView {
-    view! {
-        <thead class=class>
-            {children()}
-        </thead>
-    }
+    view! { <thead class=class>{children()}</thead> }
 }
 
 #[component]
 pub fn TableRow<'a>(#[prop(optional, into)] class: &'a str, children: Children) -> impl IntoView {
-    view! {
-        <tr class=class>
-            {children()}
-        </tr>
-    }
+    view! { <tr class=class>{children()}</tr> }
 }
 
 #[component]
@@ -113,18 +101,10 @@ pub fn TableHeadCol<'a>(
     #[prop(optional, into)] class: &'a str,
     children: Children,
 ) -> impl IntoView {
-    view! {
-        <th class=class>
-            {children()}
-        </th>
-    }
+    view! { <th class=class>{children()}</th> }
 }
 
 #[component]
 pub fn TableCol<'a>(#[prop(optional, into)] class: &'a str, children: Children) -> impl IntoView {
-    view! {
-        <td class=class>
-            {children()}
-        </td>
-    }
+    view! { <td class=class>{children()}</td> }
 }

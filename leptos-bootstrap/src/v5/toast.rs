@@ -6,21 +6,13 @@ pub fn ToastContainer<'a>(
     children: Children,
 ) -> impl IntoView {
     let class = format!("toast-container position-static {}", class);
-    view! {
-        <div class=class>
-            {children()}
-        </div>
-    }
+    view! { <div class=class>{children()}</div> }
 }
 
 #[component]
 pub fn Toast<'a>(#[prop(optional, into)] class: &'a str, children: Children) -> impl IntoView {
     let class = format!("toast {}", class);
-    view! {
-        <div class=class>
-            {children()}
-        </div>
-    }
+    view! { <div class=class>{children()}</div> }
 }
 
 #[component]
@@ -29,19 +21,11 @@ pub fn ToastHeader<'a>(
     children: Children,
 ) -> impl IntoView {
     let class = format!("toast-header {}", class);
-    view! {
-        <div class=class>
-            {children()}
-        </div>
-    }
+    view! { <div class=class>{children()}</div> }
 }
 
 #[component]
 pub fn ToastBody<'a>(#[prop(optional, into)] class: &'a str, children: Children) -> impl IntoView {
     let class = format!("toast-body {}", class);
-    view! {
-        <div class=class>
-            {children()}
-        </div>
-    }
+    view! { <div class=class>{children()}</div> }
 }

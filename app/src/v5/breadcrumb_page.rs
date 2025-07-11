@@ -2,21 +2,7 @@ use leptos::prelude::*;
 
 use leptos_bootstrap::v5::{Breadcrumb, BreadcrumbItem, Card, CardBody, CardHeader};
 
-#[component]
-pub fn BreadcrumbPage() -> impl IntoView {
-    view! {
-        <h1>Breadcrumb</h1>
-        <Card class="mb-3">
-            <CardHeader>Breadcrumb</CardHeader>
-            <CardBody>
-                <Breadcrumb>
-                    <BreadcrumbItem>{"Home"}</BreadcrumbItem>
-                    <BreadcrumbItem>{"Library"}</BreadcrumbItem>
-                </Breadcrumb>
-                <Card class="mt-2">
-                    <CardBody>
-                        <pre>
-"use leptos_bootstrap::v5::{Breadcrumb, BreadcrumbItem};
+const EXAMPLE: &str = "use leptos_bootstrap::v5::{Breadcrumb, BreadcrumbItem};
 
 #[component]
 pub fn Component() -> impl IntoView {
@@ -26,8 +12,22 @@ pub fn Component() -> impl IntoView {
             <BreadcrumbItem>{\"Library\"}</BreadcrumbItem>
         </Breadcrumb>
     }
-}"
-                        </pre>
+}";
+
+#[component]
+pub fn BreadcrumbPage() -> impl IntoView {
+    view! {
+        <h1 class="mt-3 mb-3">Breadcrumb</h1>
+        <Card class="mb-3">
+            <CardHeader>Breadcrumb</CardHeader>
+            <CardBody>
+                <Breadcrumb>
+                    <BreadcrumbItem>{"Home"}</BreadcrumbItem>
+                    <BreadcrumbItem>{"Library"}</BreadcrumbItem>
+                </Breadcrumb>
+                <Card class="mt-2">
+                    <CardBody>
+                        <pre>{EXAMPLE}</pre>
                     </CardBody>
                 </Card>
             </CardBody>

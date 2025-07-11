@@ -56,7 +56,7 @@ pub fn Spinner<'a>(
     let class = format!("spinner-border {} {} {}", kind, size, class);
     view! {
         <div class=class role="status">
-          <span class="visually-hidden">Loading...</span>
+            <span class="visually-hidden">Loading...</span>
         </div>
     }
 }
@@ -70,7 +70,7 @@ pub fn GrowingSpinner<'a>(
     let class = format!("spinner-grow {} {} {}", kind, size, class);
     view! {
         <div class=class role="status">
-          <span class="visually-hidden">Loading...</span>
+            <span class="visually-hidden">Loading...</span>
         </div>
     }
 }

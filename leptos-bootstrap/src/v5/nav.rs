@@ -17,9 +17,7 @@ pub fn NavLink<'a>(
     }
     let class = format!("nav-link {}", class);
     view! {
-        <a
-            class=class
-            href=href>
+        <a class=class href=href>
             {children()}
         </a>
     }
@@ -28,11 +26,7 @@ pub fn NavLink<'a>(
 #[component]
 pub fn NavBar<'a>(#[prop(optional, into)] class: &'a str, children: Children) -> impl IntoView {
     let class = format!("navbar {}", class);
-    view! {
-        <nav class=class>
-            {children()}
-        </nav>
-    }
+    view! { <nav class=class>{children()}</nav> }
 }
 
 #[component]
@@ -71,21 +65,13 @@ pub fn NavBarMenu(children: Children) -> impl IntoView {
 
 #[component]
 pub fn NavItem(children: Children) -> impl IntoView {
-    view! {
-        <div class="navbar-item">
-            {children()}
-        </div>
-    }
+    view! { <div class="navbar-item">{children()}</div> }
 }
 
 #[component]
 pub fn NavBarNav<'a>(#[prop(optional, into)] class: &'a str, children: Children) -> impl IntoView {
     let class = format!("navbar-nav {}", class);
-    view! {
-        <ul class=class>
-            {children()}
-        </ul>
-    }
+    view! { <ul class=class>{children()}</ul> }
 }
 
 #[component]
@@ -97,12 +83,16 @@ pub fn NavBarDropDown<'a>(
     let class = format!("navbar-item dropdown {}", class);
     view! {
         <li class=class>
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+            >
                 {label}
             </a>
-            <ul class="dropdown-menu">
-                {children()}
-            </ul>
+            <ul class="dropdown-menu">{children()}</ul>
         </li>
     }
 }
@@ -115,13 +105,15 @@ pub fn NavBarDropDownItem<'a>(
 ) -> impl IntoView {
     let class = format!("dropdown-item {}", class);
     if href.is_empty() {
-        view! {
-            <li class=class>{children()}</li>
-        }
+        view! { <li class=class>{children()}</li> }
         .into_any()
     } else {
         view! {
-            <li><a class=class href=href>{children()}</a></li>
+            <li>
+                <a class=class href=href>
+                    {children()}
+                </a>
+            </li>
         }
         .into_any()
     }
@@ -130,9 +122,5 @@ pub fn NavBarDropDownItem<'a>(
 #[component]
 pub fn NavBarText<'a>(#[prop(optional)] class: &'a str, children: Children) -> impl IntoView {
     let class = format!("navbar-text {}", class);
-    view! {
-        <span class=class>
-            {children()}
-        </span>
-    }
+    view! { <span class=class>{children()}</span> }
 }

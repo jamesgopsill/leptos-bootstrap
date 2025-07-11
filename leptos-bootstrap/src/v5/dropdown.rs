@@ -16,9 +16,7 @@ pub fn DropDown<'a>(
             <button class=btn_class type="button" data-bs-toggle="dropdown" aria-expanded="false">
                 {label}
             </button>
-            <ul class="dropdown-menu">
-                {children()}
-            </ul>
+            <ul class="dropdown-menu">{children()}</ul>
         </div>
     }
 }
@@ -32,7 +30,9 @@ pub fn DropDownItem<'a>(
     let class = format!("dropdown-item {}", class);
     view! {
         <li>
-            <a class=class href=href>{children()}</a>
+            <a class=class href=href>
+                {children()}
+            </a>
         </li>
     }
 }
@@ -40,7 +40,9 @@ pub fn DropDownItem<'a>(
 #[component]
 pub fn DropDownDivider() -> impl IntoView {
     view! {
-        <li><hr class="dropdown-divider" /></li>
+        <li>
+            <hr class="dropdown-divider" />
+        </li>
     }
 }
 
@@ -59,13 +61,18 @@ pub fn SplitButton<'a>(
     );
     view! {
         <div class="btn-group">
-            <button type="button" class=btn_class>{label}</button>
-            <button type="button" class=dropdown_class data-bs-toggle="dropdown" aria-expanded="false">
+            <button type="button" class=btn_class>
+                {label}
+            </button>
+            <button
+                type="button"
+                class=dropdown_class
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+            >
                 <span class="visually-hidden">Toggle Dropdown</span>
             </button>
-            <ul class="dropdown-menu">
-                {children()}
-            </ul>
+            <ul class="dropdown-menu">{children()}</ul>
         </div>
     }
 }

@@ -8,21 +8,13 @@ pub fn Display<'a>(
     children: Children,
 ) -> impl IntoView {
     let class = format!("display-{} {}", size, class);
-    view! {
-        <h1 class=class>
-            {children()}
-        </h1>
-    }
+    view! { <h1 class=class>{children()}</h1> }
 }
 
 #[component]
 pub fn Lead<'a>(#[prop(optional, into)] class: &'a str, children: Children) -> impl IntoView {
     let class = format!("lead {}", class);
-    view! {
-        <p class=class>
-            {children()}
-        </p>
-    }
+    view! { <p class=class>{children()}</p> }
 }
 
 #[component]
@@ -35,11 +27,8 @@ pub fn BlockQuote<'a>(
     let empty = source.is_empty();
     view! {
         <blockquote class=class>
-            {children()}
-            <Show when=move || !empty>
-                <figcaption class="blockquote-footer">
-                    {source.clone()}
-                </figcaption>
+            {children()} <Show when=move || !empty>
+                <figcaption class="blockquote-footer">{source.clone()}</figcaption>
             </Show>
         </blockquote>
     }
@@ -68,7 +57,5 @@ pub fn Image<'a>(
     #[prop(optional, into)] class: &'a str,
 ) -> impl IntoView {
     let class = format!("{} {}", kind, class);
-    view! {
-        <img src=src class=class alt=alt />
-    }
+    view! { <img src=src class=class alt=alt /> }
 }

@@ -41,9 +41,5 @@ pub fn Badge<'a>(
     if pill {
         class.push_str(" rounded-pill");
     }
-    view! {
-        <span class=class>
-            {children()}
-        </span>
-    }
+    view! { <span class=class>{children()}</span> }
 }

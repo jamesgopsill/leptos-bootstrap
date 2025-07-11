@@ -8,12 +8,7 @@ pub fn FloatingLabel<'a>(
     children: Children,
 ) -> impl IntoView {
     let class = format!("form-floating {}", class);
-    view! {
-        <div class=class>
-            {children()}
-            <label>{label}</label>
-        </div>
-    }
+    view! { <div class=class>{children()} <label>{label}</label></div> }
 }
 
 pub enum InputKind {
@@ -47,7 +42,5 @@ pub fn Input<'a>(
     #[prop(optional, into)] class: &'a str,
 ) -> impl IntoView {
     let class = format!("form-control {}", class);
-    view! {
-        <input type=kind.to_string() class=class placeholder=placeholder bind:value=value />
-    }
+    view! { <input type=kind.to_string() class=class placeholder=placeholder bind:value=value /> }
 }

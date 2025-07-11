@@ -19,11 +19,7 @@ pub fn ListGroup<'a>(
     if horizontal {
         class.push_str(" list-group-horizontal");
     }
-    view! {
-        <ul class=class>
-            {children()}
-        </ul>
-    }
+    view! { <ul class=class>{children()}</ul> }
 }
 
 pub enum ListGroupItemKind {
@@ -66,9 +62,5 @@ pub fn ListGroupItem<'a>(
     if active {
         class.push_str(" active");
     }
-    view! {
-        <li class=class>
-            {children()}
-        </li>
-    }
+    view! { <li class=class>{children()}</li> }
 }

@@ -8,17 +8,25 @@ pub fn Carousel<'a>(#[prop(optional, into)] class: &'a str, children: Children) 
     let hash_id = format!("#{}", id);
     view! {
         <div id=id.to_string() class=class>
-            <div class="carousel-inner">
-                {children()}
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target=hash_id.clone() data-bs-slide="prev">
-               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-               <span class="visually-hidden">Previous</span>
-             </button>
-             <button class="carousel-control-next" type="button" data-bs-target=hash_id data-bs-slide="next">
-               <span class="carousel-control-next-icon" aria-hidden="true"></span>
-               <span class="visually-hidden">Next</span>
-             </button>
+            <div class="carousel-inner">{children()}</div>
+            <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target=hash_id.clone()
+                data-bs-slide="prev"
+            >
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target=hash_id
+                data-bs-slide="next"
+            >
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
     }
 }
@@ -33,9 +41,5 @@ pub fn CarouselItem<'a>(
     if active {
         class.push_str(" active");
     }
-    view! {
-        <div class=class>
-            {children()}
-        </div>
-    }
+    view! { <div class=class>{children()}</div> }
 }

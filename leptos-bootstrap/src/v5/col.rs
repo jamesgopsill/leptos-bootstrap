@@ -34,9 +34,5 @@ pub fn Col<'a>(
         combined_class.push(' ');
         combined_class.push_str(class.trim());
     }
-    view! {
-        <div class=combined_class>
-            {children()}
-        </div>
-    }
+    view! { <div class=combined_class>{children()}</div> }
 }

@@ -1,6 +1,6 @@
 [package]
 name = "leptos-bootstrap"
-version = "0.0.2"
+version = "0.0.3"
 edition = "2024"
 license = "MIT"
 description = "Bootstrap styled components for leptos."
